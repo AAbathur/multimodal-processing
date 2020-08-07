@@ -1,6 +1,6 @@
 #codding: utf-8
 
-""" 获得ResNet模型的倒数第二层 """
+""" 获得ResNet50的倒数第二层输出:2048维向量 / 获得DenseNet121的倒数第二层:7*7*1024张量 """
 
 import tensorflow as tf
 import keras
@@ -193,14 +193,11 @@ if __name__ == "__main__":
     image_vec = np.load(npz_file)['arr_0']
     print(image_vec.shape) """
     
-    """ all_labels = np.array(labels)
-    print(all_labels.shape)
-    np.savez(r'image-data\labels_new.npz',all_labels)
-    print('savez done') """
-    """ for j in range(25,28):
+    
+    for j in range(0,34):
         p = Process(target=get_vec_by_Dense121, args=(j,))
         p.start()
-        p.join() """
+        p.join() 
     
    
 
